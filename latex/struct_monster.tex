@@ -1,0 +1,68 @@
+\doxysection{Monster Struct Reference}
+\hypertarget{struct_monster}{}\label{struct_monster}\index{Monster@{Monster}}
+
+
+Represents a monster Geralt can encounter.  
+
+
+
+
+{\ttfamily \#include $<$structs.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_monster_aff79c6dddf7329105cbfaa748ffdf5da}{name}}
+\item 
+\mbox{\hyperlink{struct_sign}{Sign}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_monster_a08f039bc24b5c0a615561ac9de2be8a9}{signs}}
+\item 
+\mbox{\hyperlink{struct_potion}{Potion}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_monster_a7d8a0ae157a45ddbeeb20178ff898630}{potions}}
+\item 
+int \mbox{\hyperlink{struct_monster_af80220ec858174bdff2edc94beaf8cae}{number\+\_\+of\+\_\+signs}}
+\item 
+int \mbox{\hyperlink{struct_monster_a18fe37a58077e6fa1e67f27778b7cb9b}{number\+\_\+of\+\_\+potions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a monster Geralt can encounter. 
+
+Each monster is uniquely identified by name and may have associated signs and potions that are effective against it. This struct holds knowledge about known tactics for defeating the monster. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_monster_aff79c6dddf7329105cbfaa748ffdf5da}\index{Monster@{Monster}!name@{name}}
+\index{name@{name}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_monster_aff79c6dddf7329105cbfaa748ffdf5da} 
+char \texorpdfstring{$\ast$}{*} Monster\+::name}
+
+\Hypertarget{struct_monster_a18fe37a58077e6fa1e67f27778b7cb9b}\index{Monster@{Monster}!number\_of\_potions@{number\_of\_potions}}
+\index{number\_of\_potions@{number\_of\_potions}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{number\_of\_potions}{number\_of\_potions}}
+{\footnotesize\ttfamily \label{struct_monster_a18fe37a58077e6fa1e67f27778b7cb9b} 
+int Monster\+::number\+\_\+of\+\_\+potions}
+
+\Hypertarget{struct_monster_af80220ec858174bdff2edc94beaf8cae}\index{Monster@{Monster}!number\_of\_signs@{number\_of\_signs}}
+\index{number\_of\_signs@{number\_of\_signs}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{number\_of\_signs}{number\_of\_signs}}
+{\footnotesize\ttfamily \label{struct_monster_af80220ec858174bdff2edc94beaf8cae} 
+int Monster\+::number\+\_\+of\+\_\+signs}
+
+\Hypertarget{struct_monster_a7d8a0ae157a45ddbeeb20178ff898630}\index{Monster@{Monster}!potions@{potions}}
+\index{potions@{potions}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{potions}{potions}}
+{\footnotesize\ttfamily \label{struct_monster_a7d8a0ae157a45ddbeeb20178ff898630} 
+\mbox{\hyperlink{struct_potion}{Potion}} \texorpdfstring{$\ast$}{*} Monster\+::potions}
+
+\Hypertarget{struct_monster_a08f039bc24b5c0a615561ac9de2be8a9}\index{Monster@{Monster}!signs@{signs}}
+\index{signs@{signs}!Monster@{Monster}}
+\doxysubsubsection{\texorpdfstring{signs}{signs}}
+{\footnotesize\ttfamily \label{struct_monster_a08f039bc24b5c0a615561ac9de2be8a9} 
+\mbox{\hyperlink{struct_sign}{Sign}} \texorpdfstring{$\ast$}{*} Monster\+::signs}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{structs_8c}{structs.\+c}}\item 
+src/\mbox{\hyperlink{structs_8h}{structs.\+h}}\end{DoxyCompactItemize}

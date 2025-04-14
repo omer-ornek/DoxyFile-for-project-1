@@ -1,0 +1,60 @@
+\doxysection{Potion Struct Reference}
+\hypertarget{struct_potion}{}\label{struct_potion}\index{Potion@{Potion}}
+
+
+Represents a potion that can be brewed by Geralt.  
+
+
+
+
+{\ttfamily \#include $<$structs.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_potion_a26807533126b32fd73b64edfbc33eb23}{number\+Of\+Potion}}
+\item 
+\mbox{\hyperlink{struct_ingredient}{Ingredient}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_potion_a92f6e161bfffa6c2695f482391b03497}{ingredients}}
+\item 
+int \mbox{\hyperlink{struct_potion_a08f803040b3026c203ca6f93c4c8c9c2}{number\+\_\+of\+\_\+ingredients}}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_potion_aac88bfda34d33f84f40ce41820b774f8}{name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a potion that can be brewed by Geralt. 
+
+A potion consists of a name, a list of ingredients required to brew it, and a count of how many times it has been successfully created. Potions can be effective against certain monsters and are consumed during encounters. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_potion_a92f6e161bfffa6c2695f482391b03497}\index{Potion@{Potion}!ingredients@{ingredients}}
+\index{ingredients@{ingredients}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{ingredients}{ingredients}}
+{\footnotesize\ttfamily \label{struct_potion_a92f6e161bfffa6c2695f482391b03497} 
+\mbox{\hyperlink{struct_ingredient}{Ingredient}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Potion\+::ingredients}
+
+\Hypertarget{struct_potion_aac88bfda34d33f84f40ce41820b774f8}\index{Potion@{Potion}!name@{name}}
+\index{name@{name}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_potion_aac88bfda34d33f84f40ce41820b774f8} 
+char \texorpdfstring{$\ast$}{*} Potion\+::name}
+
+\Hypertarget{struct_potion_a08f803040b3026c203ca6f93c4c8c9c2}\index{Potion@{Potion}!number\_of\_ingredients@{number\_of\_ingredients}}
+\index{number\_of\_ingredients@{number\_of\_ingredients}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{number\_of\_ingredients}{number\_of\_ingredients}}
+{\footnotesize\ttfamily \label{struct_potion_a08f803040b3026c203ca6f93c4c8c9c2} 
+int Potion\+::number\+\_\+of\+\_\+ingredients}
+
+\Hypertarget{struct_potion_a26807533126b32fd73b64edfbc33eb23}\index{Potion@{Potion}!numberOfPotion@{numberOfPotion}}
+\index{numberOfPotion@{numberOfPotion}!Potion@{Potion}}
+\doxysubsubsection{\texorpdfstring{numberOfPotion}{numberOfPotion}}
+{\footnotesize\ttfamily \label{struct_potion_a26807533126b32fd73b64edfbc33eb23} 
+int Potion\+::number\+Of\+Potion}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{structs_8c}{structs.\+c}}\item 
+src/\mbox{\hyperlink{structs_8h}{structs.\+h}}\end{DoxyCompactItemize}

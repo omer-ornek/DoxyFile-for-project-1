@@ -1,0 +1,54 @@
+\doxysection{Hash\+Node Struct Reference}
+\hypertarget{struct_hash_node}{}\label{struct_hash_node}\index{HashNode@{HashNode}}
+
+
+A single node in a linked list for separate chaining.  
+
+
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_hash_node_a24d09cd9c802f8cb42098cf56114a474}{key}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_hash_node_a4b76a9876759eb2c5f49e65f4490dd1e}{value}}
+\item 
+struct \mbox{\hyperlink{struct_hash_node}{Hash\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_hash_node_a3582e5bf00e74881534d4e0b718fd1a2}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A single node in a linked list for separate chaining. 
+
+Represents a single node (key-\/value pair) in the hash map\textquotesingle{}s linked list.
+
+Each node contains a dynamically allocated key (string), a value pointer (can point to any data), and a pointer to the next node. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_hash_node_a24d09cd9c802f8cb42098cf56114a474}\index{HashNode@{HashNode}!key@{key}}
+\index{key@{key}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{struct_hash_node_a24d09cd9c802f8cb42098cf56114a474} 
+char \texorpdfstring{$\ast$}{*} Hash\+Node\+::key}
+
+\Hypertarget{struct_hash_node_a3582e5bf00e74881534d4e0b718fd1a2}\index{HashNode@{HashNode}!next@{next}}
+\index{next@{next}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{struct_hash_node_a3582e5bf00e74881534d4e0b718fd1a2} 
+struct \mbox{\hyperlink{struct_hash_node}{Hash\+Node}} \texorpdfstring{$\ast$}{*} Hash\+Node\+::next}
+
+\Hypertarget{struct_hash_node_a4b76a9876759eb2c5f49e65f4490dd1e}\index{HashNode@{HashNode}!value@{value}}
+\index{value@{value}!HashNode@{HashNode}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{struct_hash_node_a4b76a9876759eb2c5f49e65f4490dd1e} 
+void \texorpdfstring{$\ast$}{*} Hash\+Node\+::value}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{map_8c}{map.\+c}}\item 
+src/\mbox{\hyperlink{map_8h}{map.\+h}}\end{DoxyCompactItemize}

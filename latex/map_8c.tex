@@ -1,0 +1,183 @@
+\doxysection{src/map.c File Reference}
+\hypertarget{map_8c}{}\label{map_8c}\index{src/map.c@{src/map.c}}
+
+
+A simple hash map implementation using separate chaining.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hash_node}{Hash\+Node}}
+\begin{DoxyCompactList}\small\item\em A single node in a linked list for separate chaining. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_hash_map}{Hash\+Map}}
+\begin{DoxyCompactList}\small\item\em Main structure representing the hash map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{map_8c_a5446a5bbb68bb93392b04dfbfa0095af}{INITIAL\+\_\+\+CAPACITY}}~11
+\item 
+\#define \mbox{\hyperlink{map_8c_a846f78d98a30c431ef3a4d570e657913}{LOAD\+\_\+\+FACTOR}}~0.\+75
+\item 
+\#define \mbox{\hyperlink{map_8c_aca7d5718ab8c38506adb3bef2469b319}{MOD}}~0xffffffff
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long long \mbox{\hyperlink{map_8c_aa5114a4fed348a29fb92123470476b1b}{ull}}
+\item 
+typedef struct Hash\+Node \mbox{\hyperlink{map_8c_a9a999a0999ddfe3f538476912add9107}{Hash\+Node}}
+\item 
+typedef struct Hash\+Map \mbox{\hyperlink{map_8c_aebe1ad36f469ee273aa6f228ab38501c}{Hash\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8c_a7bc7d6188ed53117aae23f75a4816724}{create\+\_\+\+Hash\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Creates and initializes a new \doxylink{struct_hash_map}{Hash\+Map} with INITIAL\+\_\+\+CAPACITY. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8c_a05854c963f3b32df1b67bdcd41c44215}{insert\+\_\+\+Hash\+Map}} (\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}map, char \texorpdfstring{$\ast$}{*}key, void \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Inserts or updates a key-\/value pair in the hash map. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8c_a2dfffc6cd881b18cc5788be342f54306}{get\+\_\+\+Hash\+Map}} (\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}map, char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Retrieves the value associated with a given key. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8c_ab2922e2a92933b7d152b822ca5ff1020}{remove\+\_\+\+Hash\+Map}} (\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}map, char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Removes a key-\/value pair from the hash map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple hash map implementation using separate chaining. 
+
+This file implements a dynamically resizing hash map that stores (key, value) pairs. Keys are strings, and any pointer type can be used as the value. Collisions are resolved with linked lists (separate chaining). The table automatically resizes when the load factor exceeds a threshold (LOAD\+\_\+\+FACTOR). 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{map_8c_a5446a5bbb68bb93392b04dfbfa0095af}\index{map.c@{map.c}!INITIAL\_CAPACITY@{INITIAL\_CAPACITY}}
+\index{INITIAL\_CAPACITY@{INITIAL\_CAPACITY}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{INITIAL\_CAPACITY}{INITIAL\_CAPACITY}}
+{\footnotesize\ttfamily \label{map_8c_a5446a5bbb68bb93392b04dfbfa0095af} 
+\#define INITIAL\+\_\+\+CAPACITY~11}
+
+\Hypertarget{map_8c_a846f78d98a30c431ef3a4d570e657913}\index{map.c@{map.c}!LOAD\_FACTOR@{LOAD\_FACTOR}}
+\index{LOAD\_FACTOR@{LOAD\_FACTOR}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{LOAD\_FACTOR}{LOAD\_FACTOR}}
+{\footnotesize\ttfamily \label{map_8c_a846f78d98a30c431ef3a4d570e657913} 
+\#define LOAD\+\_\+\+FACTOR~0.\+75}
+
+\Hypertarget{map_8c_aca7d5718ab8c38506adb3bef2469b319}\index{map.c@{map.c}!MOD@{MOD}}
+\index{MOD@{MOD}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{MOD}{MOD}}
+{\footnotesize\ttfamily \label{map_8c_aca7d5718ab8c38506adb3bef2469b319} 
+\#define MOD~0xffffffff}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{map_8c_aebe1ad36f469ee273aa6f228ab38501c}\index{map.c@{map.c}!HashMap@{HashMap}}
+\index{HashMap@{HashMap}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{HashMap}{HashMap}}
+{\footnotesize\ttfamily \label{map_8c_aebe1ad36f469ee273aa6f228ab38501c} 
+typedef struct Hash\+Map Hash\+Map}
+
+\Hypertarget{map_8c_a9a999a0999ddfe3f538476912add9107}\index{map.c@{map.c}!HashNode@{HashNode}}
+\index{HashNode@{HashNode}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{HashNode}{HashNode}}
+{\footnotesize\ttfamily \label{map_8c_a9a999a0999ddfe3f538476912add9107} 
+typedef struct Hash\+Node Hash\+Node}
+
+\Hypertarget{map_8c_aa5114a4fed348a29fb92123470476b1b}\index{map.c@{map.c}!ull@{ull}}
+\index{ull@{ull}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{ull}{ull}}
+{\footnotesize\ttfamily \label{map_8c_aa5114a4fed348a29fb92123470476b1b} 
+typedef unsigned long long \mbox{\hyperlink{map_8c_aa5114a4fed348a29fb92123470476b1b}{ull}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{map_8c_a7bc7d6188ed53117aae23f75a4816724}\index{map.c@{map.c}!create\_HashMap@{create\_HashMap}}
+\index{create\_HashMap@{create\_HashMap}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{create\_HashMap()}{create\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8c_a7bc7d6188ed53117aae23f75a4816724} 
+\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*} create\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Creates and initializes a new \doxylink{struct_hash_map}{Hash\+Map} with INITIAL\+\_\+\+CAPACITY. 
+
+Creates a new \doxylink{struct_hash_map}{Hash\+Map} and returns its pointer.
+
+Allocates memory for the \doxylink{struct_hash_map}{Hash\+Map} structure and initializes its fields. Also allocates and zero-\/initializes the underlying table array.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \doxylink{struct_hash_map}{Hash\+Map}, or NULL if allocation fails. 
+\end{DoxyReturn}
+\Hypertarget{map_8c_a2dfffc6cd881b18cc5788be342f54306}\index{map.c@{map.c}!get\_HashMap@{get\_HashMap}}
+\index{get\_HashMap@{get\_HashMap}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{get\_HashMap()}{get\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8c_a2dfffc6cd881b18cc5788be342f54306} 
+void \texorpdfstring{$\ast$}{*} get\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{map}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the value associated with a given key. 
+
+Retrieves the value associated with the given string key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The null-\/terminated string key to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the stored value, or NULL if not found. 
+\end{DoxyReturn}
+\Hypertarget{map_8c_a05854c963f3b32df1b67bdcd41c44215}\index{map.c@{map.c}!insert\_HashMap@{insert\_HashMap}}
+\index{insert\_HashMap@{insert\_HashMap}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{insert\_HashMap()}{insert\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8c_a05854c963f3b32df1b67bdcd41c44215} 
+int insert\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{map}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Inserts or updates a key-\/value pair in the hash map. 
+
+Inserts a (key, value) pair into the hash map.
+
+Computes the index using hash\+\_\+function. If the key is already present, its value is updated. Otherwise, a new node is added to the front (or end) of the chain. If the load factor exceeds LOAD\+\_\+\+FACTOR, the map is resized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & Null-\/terminated string key (will be copied with strdup). \\
+\hline
+{\em value} & Pointer to the value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, -\/1 on error (e.\+g., map not allocated). 
+\end{DoxyReturn}
+\Hypertarget{map_8c_ab2922e2a92933b7d152b822ca5ff1020}\index{map.c@{map.c}!remove\_HashMap@{remove\_HashMap}}
+\index{remove\_HashMap@{remove\_HashMap}!map.c@{map.c}}
+\doxysubsubsection{\texorpdfstring{remove\_HashMap()}{remove\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8c_ab2922e2a92933b7d152b822ca5ff1020} 
+int remove\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{map}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Removes a key-\/value pair from the hash map. 
+
+Removes the key and its associated value from the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The null-\/terminated string key to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the removal is successful, -\/1 if key is not found or error occurs. 
+\end{DoxyReturn}

@@ -1,0 +1,35 @@
+\doxysection{src/io.h File Reference}
+\hypertarget{io_8h}{}\label{io_8h}\index{src/io.h@{src/io.h}}
+{\ttfamily \#include "{}map.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{io_8h_aebbeb8e3214a6f00a6acf88827c1057e}{grammar\+\_\+check}} (char \texorpdfstring{$\ast$}{*}line, \mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}ingredients, \mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}potions, \mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}trophies, \mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}monsters)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8h_aebbeb8e3214a6f00a6acf88827c1057e}\index{io.h@{io.h}!grammar\_check@{grammar\_check}}
+\index{grammar\_check@{grammar\_check}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{grammar\_check()}{grammar\_check()}}
+{\footnotesize\ttfamily \label{io_8h_aebbeb8e3214a6f00a6acf88827c1057e} 
+int grammar\+\_\+check (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line}{, }\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{ingredients}{, }\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{potions}{, }\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{trophies}{, }\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{monsters}{}\end{DoxyParamCaption})}
+
+Parses and validates the user input line according to your custom grammar rules. If valid and it detects a "{}loot"{} command, it calls loot(...) from \doxylink{functions_8c}{functions.\+c} or any other relevant function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The command line to parse \\
+\hline
+{\em ingredients} & \doxylink{struct_hash_map}{Hash\+Map} where ingredient data is stored \\
+\hline
+{\em potions} & \doxylink{struct_hash_map}{Hash\+Map} where potion data is stored (if needed) \\
+\hline
+{\em trophies} & \doxylink{struct_hash_map}{Hash\+Map} where trophy data is stored (if needed) \\
+\hline
+{\em monsters} & \doxylink{struct_hash_map}{Hash\+Map} where monster data is stored (if needed)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the grammar is valid 0 for “\+Exit” condition -\/1 if the grammar is invalid 
+\end{DoxyReturn}

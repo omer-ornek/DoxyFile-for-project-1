@@ -1,0 +1,176 @@
+\doxysection{src/map.h File Reference}
+\hypertarget{map_8h}{}\label{map_8h}\index{src/map.h@{src/map.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hash_node}{Hash\+Node}}
+\begin{DoxyCompactList}\small\item\em A single node in a linked list for separate chaining. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_hash_map}{Hash\+Map}}
+\begin{DoxyCompactList}\small\item\em Main structure representing the hash map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Hash\+Node \mbox{\hyperlink{map_8h_a9a999a0999ddfe3f538476912add9107}{Hash\+Node}}
+\item 
+typedef struct Hash\+Map \mbox{\hyperlink{map_8h_aebe1ad36f469ee273aa6f228ab38501c}{Hash\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a439a6767c2754463aea49a7973a06b6b}{create\+\_\+\+Hash\+Map}} (void)
+\begin{DoxyCompactList}\small\item\em Creates a new \doxylink{struct_hash_map}{Hash\+Map} and returns its pointer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8h_a05854c963f3b32df1b67bdcd41c44215}{insert\+\_\+\+Hash\+Map}} (\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}map, char \texorpdfstring{$\ast$}{*}key, void \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Inserts a (key, value) pair into the hash map. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{map_8h_a2dfffc6cd881b18cc5788be342f54306}{get\+\_\+\+Hash\+Map}} (\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}map, char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Retrieves the value associated with the given string key. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{map_8h_ab2922e2a92933b7d152b822ca5ff1020}{remove\+\_\+\+Hash\+Map}} (\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}map, char \texorpdfstring{$\ast$}{*}key)
+\begin{DoxyCompactList}\small\item\em Removes the key and its associated value from the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{map_8h_aebe1ad36f469ee273aa6f228ab38501c}\index{map.h@{map.h}!HashMap@{HashMap}}
+\index{HashMap@{HashMap}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{HashMap}{HashMap}}
+{\footnotesize\ttfamily \label{map_8h_aebe1ad36f469ee273aa6f228ab38501c} 
+typedef struct Hash\+Map Hash\+Map}
+
+\Hypertarget{map_8h_a9a999a0999ddfe3f538476912add9107}\index{map.h@{map.h}!HashNode@{HashNode}}
+\index{HashNode@{HashNode}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{HashNode}{HashNode}}
+{\footnotesize\ttfamily \label{map_8h_a9a999a0999ddfe3f538476912add9107} 
+typedef struct Hash\+Node Hash\+Node}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{map_8h_a439a6767c2754463aea49a7973a06b6b}\index{map.h@{map.h}!create\_HashMap@{create\_HashMap}}
+\index{create\_HashMap@{create\_HashMap}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{create\_HashMap()}{create\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8h_a439a6767c2754463aea49a7973a06b6b} 
+\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*} create\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new \doxylink{struct_hash_map}{Hash\+Map} and returns its pointer. 
+
+Initializes the map with a default capacity and allocates memory for the table.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created \doxylink{struct_hash_map}{Hash\+Map}, or NULL if memory allocation fails.
+\end{DoxyReturn}
+Creates a new \doxylink{struct_hash_map}{Hash\+Map} and returns its pointer.
+
+Allocates memory for the \doxylink{struct_hash_map}{Hash\+Map} structure and initializes its fields. Also allocates and zero-\/initializes the underlying table array.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created \doxylink{struct_hash_map}{Hash\+Map}, or NULL if allocation fails. 
+\end{DoxyReturn}
+\Hypertarget{map_8h_a2dfffc6cd881b18cc5788be342f54306}\index{map.h@{map.h}!get\_HashMap@{get\_HashMap}}
+\index{get\_HashMap@{get\_HashMap}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{get\_HashMap()}{get\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8h_a2dfffc6cd881b18cc5788be342f54306} 
+void \texorpdfstring{$\ast$}{*} get\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{map}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the value associated with the given string key. 
+
+Performs lookup using the key and returns the corresponding value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The key to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the value if found, or NULL if the key does not exist.
+\end{DoxyReturn}
+Retrieves the value associated with the given string key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The null-\/terminated string key to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the stored value, or NULL if not found. 
+\end{DoxyReturn}
+\Hypertarget{map_8h_a05854c963f3b32df1b67bdcd41c44215}\index{map.h@{map.h}!insert\_HashMap@{insert\_HashMap}}
+\index{insert\_HashMap@{insert\_HashMap}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{insert\_HashMap()}{insert\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8h_a05854c963f3b32df1b67bdcd41c44215} 
+int insert\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{map}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{key}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Inserts a (key, value) pair into the hash map. 
+
+If the key already exists in the map, its value is updated. Keys are deep-\/copied; values are stored as given.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & The target \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The key to insert (null-\/terminated string). \\
+\hline
+{\em value} & Pointer to the value associated with the key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, -\/1 on error (e.\+g., NULL map or memory allocation failure).
+\end{DoxyReturn}
+Inserts a (key, value) pair into the hash map.
+
+Computes the index using hash\+\_\+function. If the key is already present, its value is updated. Otherwise, a new node is added to the front (or end) of the chain. If the load factor exceeds LOAD\+\_\+\+FACTOR, the map is resized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & Null-\/terminated string key (will be copied with strdup). \\
+\hline
+{\em value} & Pointer to the value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 on success, -\/1 on error (e.\+g., map not allocated). 
+\end{DoxyReturn}
+\Hypertarget{map_8h_ab2922e2a92933b7d152b822ca5ff1020}\index{map.h@{map.h}!remove\_HashMap@{remove\_HashMap}}
+\index{remove\_HashMap@{remove\_HashMap}!map.h@{map.h}}
+\doxysubsubsection{\texorpdfstring{remove\_HashMap()}{remove\_HashMap()}}
+{\footnotesize\ttfamily \label{map_8h_ab2922e2a92933b7d152b822ca5ff1020} 
+int remove\+\_\+\+Hash\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_hash_map}{Hash\+Map}} \texorpdfstring{$\ast$}{*}}]{map}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Removes the key and its associated value from the map. 
+
+If the key is found, the corresponding node is removed from the map. Note\+: This function does not free the memory pointed to by the value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The key to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the key was successfully removed, -\/1 if not found or error occurred.
+\end{DoxyReturn}
+Removes the key and its associated value from the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the \doxylink{struct_hash_map}{Hash\+Map}. \\
+\hline
+{\em key} & The null-\/terminated string key to remove. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the removal is successful, -\/1 if key is not found or error occurs. 
+\end{DoxyReturn}
